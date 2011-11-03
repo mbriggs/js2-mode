@@ -10762,11 +10762,11 @@ This ensures that the counts and `next-error' are correct."
     (dolist (e (js2-ast-root-warnings js2-mode-ast))
       (js2-mode-show-warn-or-err e 'js2-warning-face))))
 
-(defun js2-echo-error (old-point new-point)
-  "Called by point-motion hooks."
-  (let ((msg (get-text-property new-point 'help-echo)))
-    (if msg
-        (message msg))))
+(defun js2-echo-error (old-point new-point))
+  ;; "Called by point-motion hooks."
+  ;; (let ((msg (get-text-property new-point 'help-echo)))
+  ;;   (if msg
+  ;;       (message msg))))
 
 (defalias #'js2-echo-help #'js2-echo-error)
 
